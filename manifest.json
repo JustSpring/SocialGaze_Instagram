@@ -1,0 +1,40 @@
+{
+  "name": "SocialGaze- Instagram",
+  "description": "Turns instagram to an accessible site",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+   "128": "icons/icon128.png"
+ },
+  "action": {
+    "default_icon": "icons/icon19.png",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "injectable-tt.js"
+      ],
+      "matches": [
+        "https://www.instagram.com/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "css": [
+        "instagram.css"
+      ],
+      "js": [
+        "contentScript-tt.js"
+      ],
+      "matches": [
+        "https://www.instagram.com/*"
+      ]
+    }
+  ]
+
+}
